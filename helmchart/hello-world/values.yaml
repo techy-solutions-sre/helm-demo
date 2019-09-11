@@ -1,0 +1,7 @@
+namespace: default
+app: hello-world
+servicePort: 9090
+replicas: 1
+image:
+  repo: sagayd/hellohtml
+  tag: latest
