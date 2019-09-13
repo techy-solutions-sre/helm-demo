@@ -35,7 +35,8 @@ helmpush:
 	-git add .
 	-git status
 	-git commit -m "Updated helm chart"
-
+	-git push
+	
 .PHONY: helminstall
 helminstall:
 	cd helmchart && helm install hello-world-0.1.0.tgz --name hello-world
