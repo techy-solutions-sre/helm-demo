@@ -5,3 +5,5 @@ replicas: 1
 image:
   repo: sagayd/hellohtml
   tag: latest
+  pullPolicy: Always
+  #pullPolicy: IfNotPresent

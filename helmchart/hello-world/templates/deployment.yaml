@@ -16,7 +16,7 @@ spec:
       containers:
         - name: helmchart-demo-http
           image: "{{ .Values.image.repo }}:{{ .Values.image.tag }}"
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8080
               name: http

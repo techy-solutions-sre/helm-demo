@@ -15,6 +15,12 @@ dkrpush:
 	sudo docker tag hellohtml sagayd/hellohtml
 	sudo docker push sagayd/hellohtml:latest
 
+.PHONY: dkrtest
+dkrtest:
+	#sudo docker rmi sagayd/hellohtml
+	#sudo docker rmi hellohtml
+	sudo docker run -p 8090:8080 sagayd/hellohtml:latest
+
 .PHONY: helmcreate
 helmcreate:
 	cd helmchart && helm create hello-world
@@ -22,6 +28,12 @@ helmcreate:
 .PHONY: helmpkg
 helmpkg:
 	cd helmchart && helm package hello-world --debug
+
+.PHONY: helmpush
+helmpush:
+	git add .
+	git commit -m "Updated helm chart"
+	git branch
 
 .PHONY: helminstall
 helminstall:
