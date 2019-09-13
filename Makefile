@@ -19,7 +19,7 @@ dkrpush: dkrbuild
 dkrtest:
 	#sudo docker rmi sagayd/hellohtml
 	#sudo docker rmi hellohtml
-	sudo docker run -p 8090:8080 sagayd/hellohtml:latest
+	-sudo docker run --rm -d -p 8090:8080 sagayd/hellohtml:latest
 
 .PHONY: helmcreate
 helmcreate:
