@@ -31,10 +31,10 @@ helmpkg:
 
 .PHONY: helmpush
 helmpush:
-	git add .
-	git status
-	git commit -m "Updated helm chart"
-	git branch
+	-git add .
+	-git status
+	-git commit -m "Updated helm chart"
+	-git branch
 
 .PHONY: helminstall
 helminstall:
