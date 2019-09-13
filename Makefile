@@ -11,7 +11,7 @@ dkrbuild:
 	sudo docker build -t hellohtml .
 
 .PHONY: dkrpush
-dkrpush:
+dkrpush: dkrbuild
 	sudo docker tag hellohtml sagayd/hellohtml
 	sudo docker push sagayd/hellohtml:latest
 
@@ -30,13 +30,13 @@ helmpkg:
 	cd helmchart && helm package hello-world --debug
 
 .PHONY: helmpush
-helmpush:
+helmpush: helmpkg
 	-git branch
 	-git add .
 	-git status
 	-git commit -m "Updated helm chart"
 	-git push
-	
+
 .PHONY: helminstall
 helminstall:
 	cd helmchart && helm install hello-world-0.1.0.tgz --name hello-world
