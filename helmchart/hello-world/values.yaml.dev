@@ -1,0 +1,9 @@
+namespace: default
+app: hello-world
+servicePort: 9090
+replicas: 2 
+image:
+  repo: sagayd/hellohtml
+  tag: latest
+  pullPolicy: Always
+  #pullPolicy: IfNotPresent
