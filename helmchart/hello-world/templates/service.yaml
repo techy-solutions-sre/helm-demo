@@ -7,7 +7,7 @@ spec:
   type: NodePort
   ports:
     - name: http
-      nodePort: 32020
+      nodePort: 32021
       port: {{ .Values.servicePort }}
       targetPort: 8080
       protocol: TCP
